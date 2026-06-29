@@ -1,0 +1,37 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{display:flex;justify-content:center;align-items:center;height:100vh;background:#1b1d35;font-family:Arial;overflow:hidden}
+.scene{perspective:1200px}
+.envelope{position:relative;width:360px;height:240px;cursor:pointer}
+.envelope::before{content:"";position:absolute;inset:0;background:#deb887;border-radius:6px;z-index:1}
+.envelope::after{content:"";position:absolute;left:0;bottom:0;border-left:180px solid transparent;border-right:180px solid transparent;border-bottom:120px solid #c89d66;z-index:5}
+.flap{position:absolute;top:0;border-left:180px solid transparent;border-right:180px solid transparent;border-top:120px solid #b8864c;transform-origin:top;transition:1s;z-index:6}
+.letter{position:absolute;left:30px;bottom:8px;width:300px;height:190px;background:#fff;border-radius:8px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:1s;z-index:0}
+.letter h2{font-size:2rem;text-align:center}
+.letter p{text-align:center;color:#555}
+button{width:100%;padding:12px;border:none;border-radius:8px;background:#ff5f8d;color:#fff;font-size:16px;opacity:0;transition:.4s;cursor:pointer}
+button:hover{background:#ff3f77}
+.open .flap{transform:rotateX(180deg)}
+.open .letter{transform:translateY(-130px);z-index:10}
+.open button{opacity:1}
+.letterPage{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;background:#3c2718;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:40px 0}
+.paper{width:850px;max-width:90%;min-height:600px;background:#f4e5c5;padding:70px;border:8px solid #b68a56;box-shadow:0 0 40px rgba(0,0,0,.45);position:relative;font-family:'Cormorant Garamond',serif;margin:auto}
+.paper:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.3),transparent 40%);pointer-events:none}
+.paper h1{text-align:center;font-family:'Cinzel',serif;color:#5d3315;margin-bottom:40px}
+.paper p{font-size:30px;line-height:1.8;color:#2d1d10;white-space:pre-wrap}
+.quill{position:absolute;top:20px;right:30px;font-size:46px}
+.paper p .hl{color:#c0392b;font-weight:700;cursor:pointer;position:relative;text-decoration:underline dotted;transition:color .3s,transform .2s;display:inline-block}
+.paper p .hl:hover{color:#ff5f8d}
+.paper p .hl.popped{color:#ff3f77;transform:scale(1.12)}
+.floatHeart{position:absolute;top:-6px;font-size:14px;color:#ff5f8d;pointer-events:none;animation:floatUp 1.1s ease-out forwards}
+@keyframes floatUp{
+  0%{opacity:1;transform:translateY(0) scale(.6)}
+  100%{opacity:0;transform:translateY(-44px) scale(1.5)}
+}
+
+@media (max-width:600px){
+  .letterPage{padding:24px 0}
+  .paper{width:100%;max-width:92%;padding:32px 24px;min-height:auto}
+  .paper h1{font-size:1.6rem;margin-bottom:24px}
+  .paper p{font-size:19px;line-height:1.7}
+  .quill{font-size:32px;top:14px;right:18px}
+}
