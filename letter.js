@@ -5,7 +5,7 @@ Then, out of nowhere, I started texting random people... and there was this one 
 
 `;
 
-const phrase = `"Do I know you?"`;
+const phrase = `"Do ik you?"`;
 
 const afterPhrase = `
 
@@ -87,11 +87,11 @@ function typeBold(str, onDone){
   function step(){
     if(idx < str.length){
       const partial = escapeText(str.slice(0, idx+1));
-      paragraph.innerHTML = html + `<strong class="hl">${partial}</strong>`;
+      paragraph.innerHTML = html + `<a href="proof.html" class="hl">${partial}</a>`;
       idx++;
       setTimeout(step, SPEED);
     } else {
-      html += `<strong class="hl">${escapeText(str)}</strong>`;
+      html += `<a href="proof.html" class="hl">${escapeText(str)}</a>`;
       paragraph.innerHTML = html;
       onDone();
     }
@@ -120,11 +120,22 @@ paragraph.addEventListener('click', (e) => {
   setTimeout(()=>hl.classList.remove('popped'), 400);
 });
 
-typePlain(beforePhrase, () => {
-  typeBold(phrase, () => {
-    typePlain(afterPhrase, () => {
-      const link = document.getElementById('photosLink');
-      if(link) link.classList.add('show');
+const alreadySeen = sessionStorage.getItem('letterTyped') === '1' || new URLSearchParams(window.location.search).get('seen') === '1';
+
+if(alreadySeen){
+  // Already seen it — show the full letter instantly, no retyping
+  paragraph.innerHTML = escapeText(beforePhrase) + `<a href="proof.html" class="hl">${escapeText(phrase)}</a>` + escapeText(afterPhrase);
+  const link = document.getElementById('photosLink');
+  if(link) link.classList.add('show');
+  sessionStorage.setItem('letterTyped', '1');
+} else {
+  typePlain(beforePhrase, () => {
+    typeBold(phrase, () => {
+      typePlain(afterPhrase, () => {
+        const link = document.getElementById('photosLink');
+        if(link) link.classList.add('show');
+        sessionStorage.setItem('letterTyped', '1');
+      });
     });
   });
-});
+}

@@ -42,6 +42,8 @@ button:hover{background:#ff3f77}
 .photoCard img{display:block;width:100%;height:auto}
 .backLink{display:inline-block;margin-top:40px;color:#f4e5c5;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:1.1rem;border-bottom:1px dotted #f4e5c5;padding-bottom:2px}
 .backLink:hover{color:#ff8fb3;border-color:#ff8fb3}
+.proofWrap{display:flex;justify-content:center}
+.proofCard{max-width:380px;width:100%}
 
 @media (max-width:650px){
   .photoGrid{grid-template-columns:1fr}
