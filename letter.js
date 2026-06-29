@@ -122,6 +122,9 @@ paragraph.addEventListener('click', (e) => {
 
 typePlain(beforePhrase, () => {
   typeBold(phrase, () => {
-    typePlain(afterPhrase, () => {});
+    typePlain(afterPhrase, () => {
+      const link = document.getElementById('photosLink');
+      if(link) link.classList.add('show');
+    });
   });
 });

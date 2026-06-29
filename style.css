@@ -28,6 +28,26 @@ button:hover{background:#ff3f77}
   100%{opacity:0;transform:translateY(-44px) scale(1.5)}
 }
 
+.letterLink{display:inline-block;margin-top:30px;padding:12px 26px;background:#ff5f8d;color:#fff;border-radius:8px;text-decoration:none;font-family:Arial,sans-serif;font-size:16px;opacity:0;transition:opacity .8s,background .3s}
+.letterLink.show{opacity:1}
+.letterLink:hover{background:#ff3f77}
+
+.photosPage{display:flex;justify-content:center;align-items:flex-start;min-height:100vh;background:#3c2718;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:50px 20px;font-family:Arial,sans-serif}
+.photosWrap{max-width:1000px;width:100%;text-align:center}
+.photosWrap h1{font-family:'Cinzel',serif;color:#f4e5c5;font-size:2.2rem;margin-bottom:8px}
+.photosSub{color:#d8bd95;font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:36px}
+.photoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.photoCard{display:block;border:8px solid #f4e5c5;border-radius:6px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .3s,box-shadow .3s}
+.photoCard:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 16px 40px rgba(0,0,0,.55)}
+.photoCard img{display:block;width:100%;height:auto}
+.backLink{display:inline-block;margin-top:40px;color:#f4e5c5;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:1.1rem;border-bottom:1px dotted #f4e5c5;padding-bottom:2px}
+.backLink:hover{color:#ff8fb3;border-color:#ff8fb3}
+
+@media (max-width:650px){
+  .photoGrid{grid-template-columns:1fr}
+  .photosWrap h1{font-size:1.6rem}
+}
+
 @media (max-width:600px){
   .letterPage{padding:24px 0}
   .paper{width:100%;max-width:92%;padding:32px 24px;min-height:auto}
