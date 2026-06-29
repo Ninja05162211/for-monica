@@ -44,6 +44,8 @@ button:hover{background:#ff3f77}
 .iconCardInner{display:flex;flex-direction:column;align-items:center;gap:12px;padding:40px 20px;color:#f4e5c5}
 .iconEmoji{font-size:3rem}
 .iconLabel{font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:.5px}
+.captionedCard{position:relative}
+.cardCaption{position:absolute;bottom:0;left:0;right:0;background:rgba(20,12,6,.72);color:#f4e5c5;font-family:'Cinzel',serif;font-size:.95rem;text-align:center;padding:10px 8px;letter-spacing:.3px}
 .backLink{display:inline-block;margin-top:40px;color:#f4e5c5;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:1.1rem;border-bottom:1px dotted #f4e5c5;padding-bottom:2px}
 .backLink:hover{color:#ff8fb3;border-color:#ff8fb3}
 .proofWrap{display:flex;justify-content:center}
