@@ -36,14 +36,22 @@ button:hover{background:#ff3f77}
 .photosWrap{max-width:1000px;width:100%;text-align:center}
 .photosWrap h1{font-family:'Cinzel',serif;color:#f4e5c5;font-size:2.2rem;margin-bottom:8px}
 .photosSub{color:#d8bd95;font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:36px}
-.photoGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.photoGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
 .photoCard{display:block;border:8px solid #f4e5c5;border-radius:6px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .3s,box-shadow .3s}
 .photoCard:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 16px 40px rgba(0,0,0,.55)}
 .photoCard img{display:block;width:100%;height:auto}
+.iconCard{background:#4a3120;display:flex;align-items:center;justify-content:center}
+.iconCardInner{display:flex;flex-direction:column;align-items:center;gap:12px;padding:40px 20px;color:#f4e5c5}
+.iconEmoji{font-size:3rem}
+.iconLabel{font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:.5px}
 .backLink{display:inline-block;margin-top:40px;color:#f4e5c5;text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:1.1rem;border-bottom:1px dotted #f4e5c5;padding-bottom:2px}
 .backLink:hover{color:#ff8fb3;border-color:#ff8fb3}
 .proofWrap{display:flex;justify-content:center}
 .proofCard{max-width:380px;width:100%}
+.fullAlbumBox{display:flex;flex-direction:column;align-items:center;gap:18px;background:#4a3120;border-radius:10px;padding:50px 30px;max-width:480px;margin:0 auto}
+.fullAlbumIcon{font-size:3.5rem}
+.fullAlbumText{color:#d8bd95;font-size:1.15rem;line-height:1.6}
+.fullAlbumBtn{margin-top:6px;opacity:1}
 
 @media (max-width:650px){
   .photoGrid{grid-template-columns:1fr}
